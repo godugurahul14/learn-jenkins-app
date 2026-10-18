@@ -72,7 +72,6 @@ pipeline {
                 }
             }
         }
-
         stage('Deploy') {
             agent {
                 docker {
@@ -84,7 +83,7 @@ pipeline {
                 sh '''
                     npm install netlify-cli
                     node_modules/.bin/netlify --version
-                    echo "This is web app hosting site: " : $51a69355-50ea-4851-8d5f-fa70304b913d
+                    echo "This is web app hosting site: " : $NETLIFY_SITE_ID
                 '''
             }
         }
